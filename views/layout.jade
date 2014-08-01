@@ -1,0 +1,62 @@
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    link(rel='stylesheet', href='stylesheets/vim.css')
+    link(rel='stylesheet',href='http://fonts.googleapis.com/css?family=Source+Code+Pro')
+
+    //script#lt_ws(type='text/javascript', src='http://localhost:58981/socket.io/lighttable/ws.js')
+
+    script(src='javascripts/jquery-2.1.1.min.js')
+    script(src='javascripts/socket-server-loader.js')
+    script(src='/socket.io/socket.io.js')
+
+  body
+    ul#messages
+    form(action='')
+      input#m(autocomplete='off')
+      button Send
+
+    .container
+      #vimjs-container.container
+        canvas#vimjs-canvas
+        div(style='text-align: center;')
+          .vimjs-loading-container
+            .vimjs-loading
+            #vimjs-loading-text loading...
+    input#vimjs-file.vimjs-invisible(type='file')
+    #vimjs-font-test.vimjs-invisible
+    #vimjs-trigger-dialog.modal
+      .modal-dialog
+        .modal-content
+          .modal-header
+            h4.modal-title Ugly workaround for Chrome
+          .modal-body
+            button#vimjs-trigger-button.btn.btn-primary(type='button') Click Me
+
+    script(type='text/javascript').
+      /*
+      try {
+        var ele = document.getElementById('last-updated-time');
+        ele.innerHTML = (new Date(ele.innerHTML)).toLocaleString();
+      } catch(e) { }
+
+      var Module = {
+          noInitialRun: false,
+          noExitRuntime: true,
+          arguments: ['/usr/local/share/vim/example.js'],
+          preRun: [],
+          postRun: [],
+          print: function() {
+             console.group.apply(console, arguments);
+              console.groupEnd();
+          },
+          printErr: function() {
+              console.group.apply(console, arguments);
+              console.groupEnd();
+          },
+      };
+      */
+
+    //script(src='javascripts/vim.js')
